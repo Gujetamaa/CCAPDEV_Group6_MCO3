@@ -1,0 +1,1067 @@
+/* Home Page Section Styles */
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background: linear-gradient(90deg, #b8eff4, #0c4964);
+}
+
+/* Header Styles */
+.header {
+    background: #ffffff;
+    color: #000;
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Set the position to fixed */
+    top: 38px;
+    left: 0;
+    right: 0;
+    z-index: 1; /* Ensure it's below the sign-up container */
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0; /* Remove any default margin on the <h1> tag */
+    padding-left: 40px; /* Add space to the left of the text */
+}
+
+/* Sign Up Container Styles */
+.signup-container {
+    background: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.fake-number {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.signup-button {
+    font-family: 'Dosis', sans-serif;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.signup-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 30px;
+    background: #000000;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.signup-button:hover + .signup-content,
+.signup-content:hover {
+    display: block;
+}
+
+/* Hide the dropdown when cursor leaves the button and the content */
+.signup-container:not(:hover) .signup-content {
+    display: none;
+}
+
+.signup-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.signup-content a:nth-child(3) {
+    /* Styles for the "EDIT PROFILE" link */
+    color: #ff9900; /* Change the color as needed */
+    font-weight: bold;
+}
+
+/* Change color on hover */
+.signup-content a:hover {
+    color: blue;
+}
+
+/* Navigation Styles */
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    display: inline;
+    margin: 0 10px; /* Reduce the space between navigation items */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 12px 20px; /* Slightly increase padding to make the links a bit larger */
+    transition: color 0.5s, background 0.3s; /* Add transition for smooth color change */
+}
+
+/* Style for hover effect */
+.navigation a:hover {
+    color: #fff; /* Change text color to white on hover */
+    background: #000; /* Change background to black on hover */
+    padding: 30px 35px; /* Adjust padding to make the links larger on hover */
+}
+
+/* Header Search Bar Styles */
+.header .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .search-icon {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 40px; /* Add space to the right of the icon */
+}
+
+.header .search-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.header .search-container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 1240px; /* Increase the width as needed */
+}
+
+.header .centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text horizontally */
+}
+
+.header .search-input {
+    border: 1px solid #ccc; /* Add border to the input container */
+    padding: 5px;
+    border-radius: 5px; /* Add rounded corners to the input container */
+}
+
+.header .search-label {
+    font-size: 20px; /* Increase the font size for the label */
+    margin-bottom: 10px;
+}
+
+.header .search-row {
+    display: flex;
+    align-items: center; /* Center items horizontally in a row */
+}
+
+.header .search-container input {
+    font-family: 'Dosis', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    height: 10px; /* Adjust the height as needed */
+    width: 300px; /* Adjust the width as needed */
+}
+
+.header .search-container img {
+    margin-right: 5px;
+    width: 28px; /* Set the same width as the text */
+    height: 28px; /* Set the same height as the text */
+    margin-left: 5px; /* Add space between the input and the image */
+}
+
+/* Main Content Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 40px; /* Adjust as needed */
+}
+
+.about-us h2 {
+    margin-top: 140px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.quote-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* CSS for the quote section */
+.quote {
+    text-align: justify;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    margin-bottom: 40px;
+    line-height: 1.5; /* Line spacing */
+}
+
+.quote p {
+    margin: 0 0 1.5em; /* Paragraph spacing */
+}
+
+/* Featured Establishments Styles */
+.featured-establishments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 80px;
+    max-width: 1100px; /* Adjust the maximum width of the container */
+    margin: 0 auto; /* Center the container on the page */
+    padding: 13px; /* Add padding to the container to create space around the cards */
+}
+
+.establishment-card {
+    border: 1px solid #ccc;
+    border-radius: 10px 30px 10px 10px; /* Adjust the border-radius to make the cards rectangular */
+    padding: 15px; /* Adjust the padding to make the card bigger */
+    margin: 18px auto; /* Adjust the margin to create less space between the cards vertically and align to the middle */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(45% - 20px); /* Adjust the width to fit two cards in a row with left and right margins */
+    box-sizing: border-box; /* To include padding and border in the width calculation */
+}
+
+/* Add margin between the container and its contents */
+.establishment-card img {
+    margin: 10px 0 5px; /* Margin at the top and bottom, leaving space at the bottom of the establishment image */
+}
+
+.establishment-card h2 {
+    font-size: 1.2rem; /* Adjust the font size to make the text smaller */
+    margin: 5px 0; /* Margin at the top and bottom of the text */
+}
+
+.establishment-card h3 a {
+    color: black;
+    text-decoration: none; /* Remove underlines from the link */
+}
+
+.establishment-card p {
+    font-size: 0.9rem; /* Adjust the font size to make the text smaller */
+    margin: 2px 0; /* Margin at the top and bottom of the text */
+}
+
+/* Adjust card image max-height to make the card shorter in height */
+.establishment-card img.establishment-image {
+    max-width: 100%;
+    max-height: 100px; /* Larger max-height for the establishment image */
+}
+
+.establishment-card img.profile-picture {
+    max-width: 100%;
+    max-height: 50px; /* Smaller max-height for the profile picture */
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    background: #000000;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+/* Add a wrapper to push the footer to the bottom */
+.wrapper {
+    min-height: 100vh; /* 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* About Us Section Styles */
+.about-us-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-top: 180px;
+    margin-bottom: 80px;
+}
+
+.about-us-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 10px; /* Increased margin for better separation */
+}
+
+.about-us-content p {
+    text-align: left;
+    margin-bottom: 15px; /* Adjusted for better spacing */
+}
+
+.about-us-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-us-content li {
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 10px; /* Adjusted for better spacing */
+}
+
+.about-us-content a {
+    text-decoration: none;
+    color: #0073e6;
+}
+
+/* Adjust alignment and dimensions for the images and image rows */
+.about-us-image {
+    width: 100%;
+    max-width: 350px; /* Adjust the maximum width as needed */
+    height: auto;
+    margin: 10px; /* Add spacing between the images */
+}
+
+/* Create two rows for the images */
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Set a specific height for all images to ensure consistent alignment */
+.image-row img {
+    height: 250px; /* Adjust the height as needed */
+}
+
+/* Style testimonials as regular paragraphs */
+.about-us-content p.testimonial {
+    font-style: italic;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+/* Establishment Section Style */
+/* Add margin to the cards container */
+.cards-container {
+    margin-top: 160px; /* Adjust the margin-top to create space between the header and the cards */
+    margin-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px; /* Add margin on the left side */
+    margin-right: 20px; /* Add margin on the right side */
+}
+
+/* Establishment Section Style */
+.custom-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px; /* Adjust the padding to make the card smaller */
+    margin: 18px auto; /* Adjust the margin to create less space between the cards vertically and align to the middle */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: calc(45% - 20px); /* Adjust the width to fit two cards in a row with left and right margins */
+    box-sizing: border-box; /* To include padding and border in the width calculation */
+}
+
+/* Add margin to the fifth card to align it to the middle */
+.custom-card:nth-child(5) {
+    margin: 15px auto;
+}
+
+.custom-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    max-height: 100px; /* Adjust the max-height to make the image smaller */
+}
+
+.custom-card h2 {
+    font-size: 1.2rem; /* Adjust the font size to make the text smaller */
+    margin: 10px 0;
+}
+
+.custom-card p {
+    margin: 5px 0; /* Adjust the margin to reduce spacing between text */
+    font-size: 0.9rem; /* Adjust the font size to make the text smaller */
+}
+
+.custom-card a.view-reviews-button {
+    display: inline-block;
+    padding: 5px 10px; /* Adjust the padding to make the button smaller */
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px 0; /* Adjust the margin to reduce spacing around the button */
+    font-size: 0.9rem; /* Adjust the font size to make the button text smaller */
+}
+
+.custom-card a.view-reviews-button:hover {
+    background-color: #000000;
+}
+
+
+/* Login Section Style */
+/* Background image for the main container */
+.main-container {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%; /* Allow the container to take the full width */
+    margin-top: 230px;
+    margin-bottom: 150px; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #000000;
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.login-container p a {
+    font-weight: bold;
+    text-decoration: underline; /* Underline the link text */
+}
+
+/* Edit Profile Form Section Style */
+.edit-profile-form {
+    max-width: 400px;
+    width: 100%; /* Allow the container to take the full width */
+    margin: 0 auto;
+    margin-top: 230px;
+    margin-bottom: 150px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.edit-profile-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-profile-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.edit-profile-form input[type="file"],
+.edit-profile-form textarea {
+    font-family: 'Dosis', sans-serif;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-profile-form .save-button {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.edit-profile-form .save-button:hover {
+    background-color: #333333;
+}
+
+
+/* User Profile Section Style */
+/* Center the profile-container in its parent */
+.profile-container {
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 90px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+}
+
+.profile-picture img {
+    width: 105px; /* Adjust the image size as needed */
+    height: 100px; /* Adjust the image size as needed */
+    border-radius: 50%; /* Make the image round (assuming it's a profile picture) */
+}
+
+.username {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the username bold if desired */
+    margin-top: 10px; /* Add spacing between elements */
+}
+
+.short-description {
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-top: 10px; /* Add spacing between elements */
+}
+
+
+/* Review Details Section Style */
+.review-container {
+    margin: 0 auto;
+    margin-top: 170px;
+    margin-bottom: 80px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+}
+
+.review-details {
+    text-align: center;
+}
+
+.review-body p {
+    margin: 0;
+}
+
+.rating, p {
+    margin: 10px 0;
+}
+
+.helpful-unhelpful button {
+    font-family: 'Dosis', sans-serif;
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.comments-section {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.comment-card h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.comment-card p {
+    margin: 0;
+}
+
+
+/* Search Results Section Style */
+.search-results {
+    margin: 0 auto;
+    margin-top: 180px;
+    margin-bottom: 80px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+}
+
+.search-results h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.result-item {
+    margin-bottom: 20px;
+}
+
+.result-item h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.result-item p {
+    margin: 10px 0;
+}
+
+/* Search Overlay */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Review Form Section Style */
+.main-container .create-review {
+    max-width: 400px;
+    width: 100%; /* Allow the container to take the full width */
+    margin: 0 auto;
+    margin-top: 180px;
+    margin-bottom: 80px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-container .create-review h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.main-container .create-review form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .create-review label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.main-container .create-review select,
+.main-container .create-review input[type="text"],
+.main-container .create-review textarea,
+.main-container .create-review input[type="number"],
+.main-container .create-review input[type="file"],
+.main-container .create-review button[type="submit"] {
+    font-family: 'Dosis', sans-serif;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main-container .create-review button[type="submit"] {
+    font-weight: bold;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.main-container .create-review button[type="submit"]:hover {
+    background-color: #333333;
+}
+
+
+/* Establishment Reviews Section Style */
+/* Establishment Information Section Style */
+.establishment-info {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 180px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.establishment-info h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.establishment-info p {
+    margin: 10px 0;
+}
+
+/* Top Reviews Section Style */
+.top-reviews {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 90px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.top-reviews h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Review Card Style */
+.review-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-card h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.review-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.review-card a.read-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.review-card a.read-more-button:hover {
+    background-color: #333333;
+}
+
+
+/* Establishment Owner Section Style */
+/* Reviews List Section Style */
+.reviews-list {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 180px;
+    margin-bottom: 90px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-list h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Review Item Style */
+.review-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.review-item h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.review-item p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.review-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.review-item a:hover {
+    color: #333;
+}
+
+/* Response Button Style */
+.response-button {
+    font-family: 'Dosis', sans-serif;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.response-button:hover {
+    background-color: #333;
+}
+
+
+/* Full Review Section Style */
+.full-review {
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the review content horizontally */
+    margin-top: 180px;
+    margin-bottom: 100px;
+    padding: 20px; /* Add padding to create a box around the content */
+    border: 1px solid #ccc; /* Add a border to the container */
+    border-radius: 5px; /* Apply rounded corners to the container */
+    background-color: #fff; /* Set a background color for the container */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the container */
+}
+
+/* Style for Edit and Delete Buttons */
+.review-buttons {
+    display: flex;
+    margin-top: 15px;
+}
+
+.edit-button, .delete-button {
+    font-family: 'Dosis', sans-serif;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Add margin-right to create space between the buttons */
+.edit-button {
+    margin-right: 10px;
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #6c6c6c;
+}
+
+/* Style for Edit Form */
+#editForm {
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#editForm h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#editedContent {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: 'Dosis', sans-serif;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6c6c6c;
+}
+
+/* Review Details Edit Comment Form */
+/* Style for Edit Comment Form */
+.comment-buttons button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+#editCommentForm {
+    margin-top: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#editCommentForm h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#editedComment {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#editCommentForm button {
+    font-family: 'Dosis', sans-serif;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#editCommentForm button:hover {
+    background-color: #6c6c6c;
+}

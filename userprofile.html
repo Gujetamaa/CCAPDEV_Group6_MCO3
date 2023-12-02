@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <title>Pinoy Palate Pleasures - The Official Website</title>
+    </head>
+    <body>
+        <!-- Sign Up Container -->
+        <div class="signup-container">
+            <div class="fake-number">123-456-7890</div>
+            <button class="signup-button">SIGN UP</button>
+            <div class="signup-content">
+                <a href="login.html">LOGIN</a>
+                <a href="register.html">REGISTER</a>
+                <a href="editprofile.html">EDIT PROFILE</a>
+            </div>
+        </div>
+    
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <h1>Pinoy Palate Pleasures</h1>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="homepage.html">HOME</a></li>
+                    <li><a href="establishments.html">ESTABLISHMENTS</a></li>
+                    <li><a href="userprofile.html">PROFILE</a></li>
+                    <li><a href="aboutus.html">ABOUT US</a></li>
+                    <li><a href="createreview.html">WRITE A REVIEW</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <button class="search-icon">
+                    <img src="magnifying-glass.png" alt="Search">
+                </button>
+                <div class="search-container">
+                    <div class="centered-content">
+                        <p class="search-label">What can we help you find?</p>
+                        <div class="search-input">
+                            <div class="search-row">
+                                <input type="text" placeholder="Search here...">
+                                <img src="magnifying-glass.png" alt="Search Here">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </header>
+    
+    <main class="main-content">
+        <div class="profile-container">
+            <div class="profile-details">
+                <div class="profile-picture">
+                    <img src="profile photos/profile-picture2.PNG" alt="User Profile Picture">
+                </div>
+                <div class="username">Anna Park</div>
+                <div class="short-description">Lasallian Foodie who likes trying food in U-Belt</div>
+            </div>
+        </div>                 
+
+        <section class="featured-establishments">
+            <div class="establishment-card">
+                <img src="establishments/establishment4.jpg" alt="Establishment Picture" class="establishment-image">
+                <h3><a href="review-details.html">Midnight Coffee G. Tolentino</a></h3>
+                <p>Rating: 4.5</p>
+                <p>Cozy nook in the middle of the busy university belt! As much as I'd want to gatekeep this place, I won't because it provides people the experience of a conducive environment, friendly company, and most of all, pour over coffee!</p>
+                <div class="mini-picture">
+                    <img src="profile photos/profile-picture2.PNG" alt="Profile Picture" class="profile-picture">
+                </div>
+                <div class="mini-name">
+                    <p>Anna Park</p>
+                </div>
+            </div>
+        
+            <div class="establishment-card">
+                <img src="establishments/establishment5.jpg" alt="Establishment Picture" class="establishment-image">
+                <h3><a href="review-details.html">24 Chicken P. Noval Branch</a></h3>
+                <p>Rating: 4.2</p>
+                <p>We were standing in the back line when we realized that the line was for picking up orders. I was surprised because there are many people buying. The service was fast despite the number of orders, and we received the right order. The chicken tastes so good! Will definitely come back soon!</p>
+                <div class="mini-picture">
+                    <img src="profile photos/profile-picture2.PNG" alt="Profile Picture" class="profile-picture">
+                </div>
+                <div class="mini-name">
+                    <p>Anna</p>
+                </div>
+            </div>
+            <!-- Add more review cards as needed -->
+        
+            <div class="pagination">
+                <!-- Pagination links can be added here if multiple pages of reviews are displayed -->
+            </div>
+        </section>             
+    </main>
+
+     <!-- Footer Section -->
+     <footer class="footer">
+        <p>&copy; 2023 Pinoy Palate Pleasures. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const signupButton = document.querySelector('.signup-button');
+            const signupContent = document.querySelector('.signup-content');
+    
+            signupButton.addEventListener('mouseover', function () {
+                signupContent.style.display = 'block';
+            });
+    
+            signupButton.addEventListener('mouseleave', function () {
+                setTimeout(function () {
+                    if (!signupContent.matches(':hover')) {
+                        signupContent.style.display = 'none';
+                    }
+                }, 200); // Adjust the timeout as needed
+    
+            });
+    
+            signupContent.addEventListener('mouseleave', function () {
+                signupContent.style.display = 'none';
+            });
+        });
+    </script>    
+</body>
+</html>

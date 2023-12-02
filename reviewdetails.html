@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Restaurant Review Hub - Review Details</title>
+</head>
+<body>
+    <!-- Sign Up Container -->
+    <div class="signup-container">
+        <div class="fake-number">123-456-7890</div>
+        <button class="signup-button">SIGN UP</button>
+        <div class="signup-content">
+            <a href="login.html">LOGIN</a>
+            <a href="register.html">REGISTER</a>
+            <a href="editprofile.html">EDIT PROFILE</a>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <h1>Pinoy Palate Pleasures</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="establishments.html">ESTABLISHMENTS</a></li>
+                <li><a href="userprofile.html">PROFILE</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="createreview.html">WRITE A REVIEW</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <button class="search-icon">
+                <img src="magnifying-glass.png" alt="Search">
+            </button>
+            <div class="search-container">
+                <div class="centered-content">
+                    <p class="search-label">What can we help you find?</p>
+                    <div class="search-input">
+                        <div class="search-row">
+                            <input type="text" placeholder="Search here...">
+                            <img src="magnifying-glass.png" alt="Search Here">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </header>
+
+    <main>
+        <div class="review-container">
+            <div class="review-details">
+                <h2>Review Title</h2>
+                <div class="review-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae efficitur neque, nec fringilla libero.</p>
+                </div>
+                <p class="rating">Rating: 4.5</p>
+                <p>Reviewer: Username</p>
+                <div class="helpful-unhelpful">
+                    <button>Helpful</button>
+                    <button>Unhelpful</button>
+                </div>
+            </div>
+            <div class="comments-section">
+                <h2>Visitor Feedback</h2>
+                <div class="comment-card" id="comment1">
+                    <h3>Commenter: CommenterUsername</h3>
+                    <p class="comment-body">Comment Body. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="comment-buttons">
+                        <button onclick="editComment('comment1')">Edit</button>
+                        <button onclick="deleteComment('comment1')">Delete</button>
+                    </div>
+                </div>
+                <div class="comment-card" id="comment2">
+                    <h3>Commenter: CommenterUsername</h3>
+                    <p class="comment-body">Comment Body. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="comment-buttons">
+                        <button onclick="editComment('comment2')">Edit</button>
+                        <button onclick="deleteComment('comment2')">Delete</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Edit Comment Form (initially hidden) -->
+            <form id="editCommentForm" style="display: none;">
+                <h2>Edit Comment</h2>
+                <label for="editedComment">Comment Body:</label>
+                <textarea id="editedComment" rows="4" cols="50"></textarea>
+                <br>
+                <button type="button" onclick="saveEditComment()">Save</button>
+            </form>
+        </div>    
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2023 Pinoy Palate Pleasures. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const signupButton = document.querySelector('.signup-button');
+            const signupContent = document.querySelector('.signup-content');
+    
+            signupButton.addEventListener('mouseover', function () {
+                signupContent.style.display = 'block';
+            });
+    
+            signupButton.addEventListener('mouseleave', function () {
+                setTimeout(function () {
+                    if (!signupContent.matches(':hover')) {
+                        signupContent.style.display = 'none';
+                    }
+                }, 200); // Adjust the timeout as needed
+    
+            });
+    
+            signupContent.addEventListener('mouseleave', function () {
+                signupContent.style.display = 'none';
+            });
+        });
+    </script> 
+    
+    <!-- JavaScript to handle Edit and Delete functionality for Comments -->
+    <script>
+        function editComment(commentId) {
+            // Show the edit form and populate it with the current comment content
+            const editForm = document.getElementById('editCommentForm');
+            const editedComment = document.getElementById('editedComment');
+            const commentBody = document.getElementById(commentId).querySelector('.comment-body').textContent;
+
+            editForm.style.display = 'block';
+            editedComment.value = commentBody;
+            
+            // Set a data attribute to store the commentId in the edit form
+            editForm.setAttribute('data-comment-id', commentId);
+        }
+
+        function saveEditComment() {
+            // Save the edited comment content and hide the edit form
+            const editForm = document.getElementById('editCommentForm');
+            const editedComment = document.getElementById('editedComment');
+            const commentId = editForm.getAttribute('data-comment-id');
+
+            const commentBodyElement = document.getElementById(commentId).querySelector('.comment-body');
+            commentBodyElement.textContent = editedComment.value;
+
+            editForm.style.display = 'none';
+        }
+
+        function deleteComment(commentId) {
+            // Implement your logic for deleting the comment using the commentId
+            console.log('Deleting comment with ID: ' + commentId);
+            // Optionally, you can remove the comment from the DOM after deletion
+            document.getElementById(commentId).remove();
+        }
+    </script>
+</body>
+</html>

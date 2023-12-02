@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Restaurant Review Hub - Establishment Reviews</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <!-- Sign Up Container -->
+    <div class="signup-container">
+        <div class="fake-number">123-456-7890</div>
+        <button class="signup-button">SIGN UP</button>
+        <div class="signup-content">
+            <a href="login.html">LOGIN</a>
+            <a href="register.html">REGISTER</a>
+            <a href="editprofile.html">EDIT PROFILE</a>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <h1>Pinoy Palate Pleasures</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="establishments.html">ESTABLISHMENTS</a></li>
+                <li><a href="userprofile.html">PROFILE</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="createreview.html">WRITE A REVIEW</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <button class="search-icon">
+                <img src="magnifying-glass.png" alt="Search">
+            </button>
+            <div class="search-container">
+                <div class="centered-content">
+                    <p class="search-label">What can we help you find?</p>
+                    <div class="search-input">
+                        <div class="search-row">
+                            <input type="text" placeholder="Search here...">
+                            <img src="magnifying-glass.png" alt="Search Here">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Full Review Content -->
+        <div class="full-review" id="review1"> <!-- Added an ID to identify the review -->
+            <!-- Review Title -->
+            <h2>The food tastes meh</h2>
+            
+            <!-- Reviewer Information -->
+            <p>Reviewer: Vern Choi</p>
+            
+            <!-- Full Review Body -->
+            <p id="reviewContent">
+                The coffee tastes great but the meals that they have could be better, especially their chicken rice meals.
+            </p>
+            
+            <!-- Rating and Helpful/Unhelpful Counts -->
+            <p>Rating: 4.5</p>
+            <p>Helpful Count: 10 | Unhelpful Count: 2</p>
+
+            <!-- Edit and Delete Buttons -->
+            <div class="review-buttons">
+                <button class="edit-button" onclick="editReview('review1')">Edit</button>
+                <button class="delete-button" onclick="deleteReview('review1')">Delete</button>
+            </div>
+
+            <!-- Edit Form (initially hidden) -->
+            <form id="editForm" style="display: none;">
+                <h2>Edit Review</h2>
+                <label for="editedContent">Review Content:</label>
+                <textarea id="editedContent" rows="4" cols="50"></textarea>
+                <br>
+                <button type="button" onclick="saveEdit('reviewContent')">Save</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2023 Pinoy Palate Pleasures. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const signupButton = document.querySelector('.signup-button');
+            const signupContent = document.querySelector('.signup-content');
+    
+            signupButton.addEventListener('mouseover', function () {
+                signupContent.style.display = 'block';
+            });
+    
+            signupButton.addEventListener('mouseleave', function () {
+                setTimeout(function () {
+                    if (!signupContent.matches(':hover')) {
+                        signupContent.style.display = 'none';
+                    }
+                }, 200); // Adjust the timeout as needed
+    
+            });
+    
+            signupContent.addEventListener('mouseleave', function () {
+                signupContent.style.display = 'none';
+            });
+        });
+    </script>    
+
+    <!-- JavaScript to handle Edit and Delete functionality -->
+    <script>
+        function editReview(reviewId) {
+            // Show the edit form and populate it with the current content of reviewContent
+            document.getElementById('editForm').style.display = 'block';
+            document.getElementById('editedContent').value = document.getElementById('reviewContent').textContent;
+        }
+
+        function saveEdit(contentId) {
+            // Save the edited content to the reviewContent and hide the edit form
+            document.getElementById(contentId).textContent = document.getElementById('editedContent').value;
+            document.getElementById('editForm').style.display = 'none';
+        }
+
+        function deleteReview(reviewId) {
+            // Implement your logic for deleting the review using the reviewId
+            console.log('Deleting review with ID: ' + reviewId);
+            
+            // Remove the review from the DOM
+            document.getElementById(reviewId).remove();
+            
+            // Redirect to establishments.html after a short delay
+            setTimeout(function () {
+                window.location.href = 'establishments.html';
+            }, 1000); // Adjust the delay as needed
+        }
+    </script>
+</body>
+</html>

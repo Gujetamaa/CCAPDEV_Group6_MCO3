@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pinoy Palate Pleasures - The Official Website</title>
+</head>
+<body>
+    <!-- Sign Up Container -->
+    <div class="signup-container">
+        <div class="fake-number">123-456-7890</div>
+        <button class="signup-button">SIGN UP</button>
+        <div class="signup-content">
+            <a href="login.html">LOGIN</a>
+            <a href="register.html">REGISTER</a>
+            <a href="editprofile.html">EDIT PROFILE</a>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <h1>Pinoy Palate Pleasures</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="homepage.html">HOME</a></li>
+                <li><a href="establishments.html">ESTABLISHMENTS</a></li>
+                <li><a href="userprofile.html">PROFILE</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="createreview.html">WRITE A REVIEW</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <button class="search-icon">
+                <img src="magnifying-glass.png" alt="Search">
+            </button>
+            <div class="search-container">
+                <div class="centered-content">
+                    <p class="search-label">What can we help you find?</p>
+                    <div class="search-input">
+                        <div class="search-row">
+                            <input type="text" placeholder="Search here...">
+                            <img src="magnifying-glass.png" alt="Search Here">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </header>
+
+    <main>
+        <div class="about-us-container">
+            <div class="about-us-content">
+                <h2>About Us</h2>
+                <p>Welcome to Pinoy Palate Pleasures, your ultimate destination for discovering and reviewing the finest dining establishments in your town. At Pinoy Palate Pleasures, we're driven by our passion for food, and we're dedicated to helping you explore, experience, and share your culinary adventures.</p>
+
+                <p>Our team is a group of passionate individuals:</p>
+                <ul>
+                    <li>Chen, Ingrid Mae A.</li>
+                    <li>Ibanez, Jerico</li>
+                    <li>Group Leader: Quinones, Angelo Yanto</li>
+                    <li>Talino, Jullian Augustine Vicera</li>
+                </ul>
+
+                <p>Our journey began in 2023, and since then, we've achieved numerous milestones on our quest to bring the best of local dining to you. At Pinoy Palate Pleasures, our mission is simple:</p>
+                <p>Mission: To provide food enthusiasts with a platform to discover and review local eateries, connecting people through their shared love for great food.</p>
+                <p>Our core values guide us in our mission:</p>
+                <p>Core Values: Quality, Transparency, Community. We stand for top-notch experiences, honesty in our reviews, and fostering a sense of community among food lovers.</p>
+
+                <p>But that's not all. Here's what some of our satisfied customers have to say:</p>
+                <p class="testimonial">Testimonial 1: "Great experience with Pinoy Palate Pleasures!"</p>
+                <p class="testimonial">Testimonial 2: "The best place to find local eateries!"</p>
+
+                <p>We're proud of our achievements, which include receiving the prestigious Foodie's Choice Award. We've also formed invaluable partnerships with local restaurants, enhancing the dining landscape for our community. Furthermore, we're actively involved in various community initiatives, such as food drives and charity events, to give back to the communities we serve.
+
+                <p>Explore our collection of photos and videos below to get a taste of the experiences we offer:</p>   
+                <div class="media-gallery">
+                    <div class="image-row">
+                        <img src="canteen.jpg" alt="Canteen" class="about-us-image">
+                        <img src="canteen1.jpg" alt="Canteen 1" class="about-us-image">
+                    </div>
+                    <div class="image-row">
+                        <img src="canteen2.jpg" alt="Canteen 2" class="about-us-image">
+                        <img src="canteen3.jpg" alt="Canteen 3" class="about-us-image">
+                    </div>
+                </div>
+
+
+                <p> All NPM packages and/or third party libraries used:</p>
+                <p>> package@1.0.0 start> node app.js</p>
+                <p>> node app.js</p>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2023 Pinoy Palate Pleasures. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const signupButton = document.querySelector('.signup-button');
+            const signupContent = document.querySelector('.signup-content');
+    
+            signupButton.addEventListener('mouseover', function () {
+                signupContent.style.display = 'block';
+            });
+    
+            signupButton.addEventListener('mouseleave', function () {
+                setTimeout(function () {
+                    if (!signupContent.matches(':hover')) {
+                        signupContent.style.display = 'none';
+                    }
+                }, 200); // Adjust the timeout as needed
+    
+            });
+    
+            signupContent.addEventListener('mouseleave', function () {
+                signupContent.style.display = 'none';
+            });
+        });
+    </script>    
+</body>
+</html>
